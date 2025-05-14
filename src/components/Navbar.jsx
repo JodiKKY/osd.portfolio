@@ -1,4 +1,5 @@
 import React from 'react';
+import favicon from '../assets/favicon.png'; // Make sure the path is correct
 
 const Navbar = () => {
   // Toggle function for mobile menu
@@ -14,8 +15,14 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
 
-          {/* Logo / Name */}
-          <a href="/" className="text-2xl font-bold text-gray-800 hover:text-blue-600">Yirenkyi Jodi</a>
+          {/* Logo Image */}
+          <a href="/" className="flex items-center">
+            <img
+              src={favicon}
+              alt="Logo"
+              className="w-10 h-10 object-contain rounded-full shadow-sm hover:opacity-80 transition"
+            />
+          </a>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
@@ -25,9 +32,17 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button onClick={toggleMenu} className="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
+          <button
+            onClick={toggleMenu}
+            className="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                 d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -38,9 +53,9 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div id="mobile-menu" className="md:hidden hidden px-4 pb-4 space-y-2">
-        <a href="#about" className="block text-gray-700 hover:text-blue-600">About</a>
-        <a href="#projects" className="block text-gray-700 hover:text-blue-600">Projects</a>
-        <a href="#resume" className="block text-gray-700 hover:text-blue-600">Resume</a>
+        <a href="#about" className="block text-gray-700 hover:text-white">About</a>
+        <a href="#projects" className="block text-gray-700 hover:text-white">Projects</a>
+        <a href="#resume" className="block text-gray-700 hover:text-white">Resume</a>
       </div>
     </nav>
   );
