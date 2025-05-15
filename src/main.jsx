@@ -4,6 +4,7 @@ import App from './App.jsx';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import Layout from './Layout/layout.jsx';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
