@@ -1,4 +1,3 @@
-// ... existing imports
 import React from 'react';
 import { Download, FolderKanban, ExternalLink, User } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -35,11 +34,104 @@ const Homepage = () => {
   return (
     <main className="bg-white text-gray-900">
       {/* Hero Section */}
-      {/* ... */}
+      <section className="py-32 bg-gradient-to-br from-gray-100 to-white text-center">
+        <div className="container mx-auto px-6">
+          <motion.h1
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight"
+          >
+            Hi, I'm <span className="text-gray-700">Yirenkyi Jodi</span>
+          </motion.h1>
+          <motion.p
+            initial="hidden"
+            animate="visible"
+            custom={1}
+            variants={fadeUp}
+            className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-10"
+          >
+            A passionate front-end developer crafting elegant, minimal, and user-friendly web experiences.
+          </motion.p>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            custom={2}
+            variants={fadeUp}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <a
+              href="#projects"
+              className="px-8 py-3 bg-gray-900 text-white rounded-xl hover:scale-105 transition-transform shadow-lg inline-flex items-center gap-2"
+            >
+              <FolderKanban className="w-5 h-5" /> View Projects
+            </a>
+            <a
+              href={pdf}
+              download
+              className="px-8 py-3 border border-gray-900 text-gray-900 rounded-xl hover:bg-gray-200 transition-transform hover:scale-105 inline-flex items-center gap-2"
+            >
+              <Download className="w-5 h-5" /> Download Resume
+            </a>
+          </motion.div>
+        </div>
+      </section>
       {/* About Section */}
-      {/* ... */}
+      <section id="about" className="py-24 bg-white">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h2 className="text-4xl font-extrabold text-gray-900 mb-8">About Me</h2>
+          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            Hello! I’m <span className="font-semibold text-blue-600">Yirenkyi Jodi</span>, a dedicated front-end developer with a passion for building seamless, intuitive, and visually appealing web experiences. I specialize in crafting responsive, user-friendly interfaces using modern technologies like <span className="font-semibold text-gray-900">React</span> and <span className="font-semibold text-gray-900">Tailwind CSS</span>.
+          </p>
+          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            I believe that great design goes hand-in-hand with clean, maintainable code. With every project, I strive to combine creativity with performance and accessibility — ensuring that users not only enjoy the look and feel but also the experience.
+          </p>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Continuously learning and adapting, I’m always exploring the latest trends and best practices in web development to deliver cutting-edge solutions that provide real value. Let’s create something amazing together!
+          </p>
+        </div>
+      </section>
+
+
       {/* Projects Section */}
-      {/* ... */}
+      <section id="projects" className="py-24 bg-gray-50">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <motion.h2
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="text-4xl font-bold text-gray-900 mb-10 flex items-center gap-2"
+          >
+            <FolderKanban className="w-7 h-7 text-gray-700" /> Projects
+          </motion.h2>
+          <div className="grid gap-10 md:grid-cols-2">
+            {projects.map((project, idx) => (
+              <motion.div
+                key={idx}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={idx}
+                variants={fadeUp}
+                className="bg-white p-6 rounded-3xl shadow-md border border-gray-200 hover:shadow-xl transition-all"
+              >
+                <h3 className="text-2xl font-semibold text-gray-800 mb-3">{project.title}</h3>
+                <p className="text-gray-700 mb-4">{project.desc}</p>
+                <ul className="flex flex-wrap gap-2 mb-5 text-sm text-gray-600">
+                  {project.tech.map((tech, i) => (
+                    <li key={i} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full">{tech}</li>
+                  ))}
+                </ul>
+                <a href="#" className="text-gray-700 hover:text-gray-900 font-medium inline-flex items-center gap-1">
+                  View Project <ExternalLink className="w-4 h-4" />
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Resume Section */}
       <section id="resume" className="py-24">
         <div className="container mx-auto px-6 max-w-5xl text-center">
@@ -69,13 +161,12 @@ const Homepage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="px-8 py-3 bg-gray-900 text-white rounded-xl hover:scale-105 transition-transform shadow-lg inline-flex items-center gap-2"
+            className="inline-block px-8 py-3 bg-gray-900 text-white rounded-xl hover:scale-105 transition-transform shadow-lg inline-flex items-center gap-2"
           >
             <Download className="w-5 h-5" /> Download Resume (PDF)
           </motion.a>
         </div>
       </section>
-
       {/* Contact Section */}
 <section id="contact" className="py-24 bg-gray-50">
   <div className="container mx-auto px-6 max-w-5xl">
@@ -97,15 +188,15 @@ const Homepage = () => {
           </div>
           <div>
             <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Phone</p>
-            <p className="text-lg font-medium">+233 59 814 1926</p>
+            <p className="text-lg font-medium">+233 55 123 4567</p>
           </div>
           <div>
             <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Email</p>
             <a
               href="mailto:yirenkyijodi@gmail.com"
-              className="text-lg font-medium text-black hover:underline"
+              className="text-lg font-medium text-blue-600 hover:underline"
             >
-              jodiyirenkyi@gmail.com
+              yirenkyijodi@gmail.com
             </a>
           </div>
           <div>
@@ -128,10 +219,10 @@ const Homepage = () => {
               <i className="fab fa-github"></i>
             </a>
             <a
-              href="https://www.linkedin.com/in/jodiyirenkyi/"
+              href="https://www.linkedin.com/in/JODIYIRENKYI"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-black transition-colors"
+              className="hover:text-blue-700 transition-colors"
               title="LinkedIn"
             >
               <i className="fab fa-linkedin"></i>
@@ -140,7 +231,7 @@ const Homepage = () => {
               href="https://twitter.com/JodiKKY"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-black transition-colors"
+              className="hover:text-blue-500 transition-colors"
               title="Twitter"
             >
               <i className="fab fa-twitter"></i>
