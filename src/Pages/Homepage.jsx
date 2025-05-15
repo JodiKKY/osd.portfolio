@@ -188,7 +188,7 @@ const Homepage = () => {
           </div>
           <div>
             <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Phone</p>
-            <p className="text-lg font-medium">+233 55 123 4567</p>
+            <p className="text-lg font-medium">+233 59 814 1926</p>
           </div>
           <div>
             <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Email</p>
@@ -196,7 +196,7 @@ const Homepage = () => {
               href="mailto:yirenkyijodi@gmail.com"
               className="text-lg font-medium text-blue-600 hover:underline"
             >
-              yirenkyijodi@gmail.com
+              jodiyirenkyi@gmail.com
             </a>
           </div>
           <div>
