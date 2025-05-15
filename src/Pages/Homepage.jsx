@@ -1,25 +1,37 @@
 import React from 'react';
-import { Download, FolderKanban, ExternalLink, User } from 'lucide-react';
+import { Download, FolderKanban, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import pdf from '../assets/CV.pdf';
-
 const projects = [
   {
     title: 'LockiT - NFC Room Access System',
     desc: 'A mobile and web app system for hotels to allow guests access to rooms via NFC-enabled phones.',
     tech: ['React', 'Tailwind CSS', 'Firebase'],
+    link: 'https://github.com/JodiKKY/lockit-room-access-system',
+    demo: 'https://lockit-admin.vercel.app',
   },
   {
     title: 'BiteWise - Restaurant Review Website',
     desc: 'A platform where users can discover, review, and rate restaurants in their area.',
     tech: ['React', 'Node.js', 'MySQL'],
+    link: 'https://github.com/JodiKKY/BiteWise',
   },
   {
     title: 'ConceptMabelles - E-commerce Website',
     desc: 'An online store for African wear, featuring product listings, shopping cart, and secure checkout.',
     tech: ['React', 'Stripe API', 'Tailwind CSS'],
+    link: 'https://github.com/JodiKKY/ConceptMabelles',
+   
+  },
+  {
+    title: 'EmployNexa - Job Listing Web App',
+    desc: 'A modern job board web application that fetches listings from a job listing API and presents them in a clean interface.',
+    tech: ['React', 'Tailwind CSS', 'Job Listing API'],
+    link: 'https://github.com/JodiKKY/employnexa-job-board',
+    demo: 'https://employnexa.vercel.app', 
   },
 ];
+
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -76,6 +88,7 @@ const Homepage = () => {
           </motion.div>
         </div>
       </section>
+
       {/* About Section */}
       <section id="about" className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
@@ -91,7 +104,6 @@ const Homepage = () => {
           </p>
         </div>
       </section>
-
 
       {/* Projects Section */}
       <section id="projects" className="py-24 bg-gray-50">
@@ -114,7 +126,7 @@ const Homepage = () => {
                 viewport={{ once: true }}
                 custom={idx}
                 variants={fadeUp}
-                className="bg-white p-6 rounded-3xl shadow-md border border-gray-200 hover:shadow-xl transition-all"
+                className="bg-white p-6 rounded-3xl shadow-md border border-gray-200 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
               >
                 <h3 className="text-2xl font-semibold text-gray-800 mb-3">{project.title}</h3>
                 <p className="text-gray-700 mb-4">{project.desc}</p>
@@ -123,9 +135,26 @@ const Homepage = () => {
                     <li key={i} className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full">{tech}</li>
                   ))}
                 </ul>
-                <a href="#" className="text-gray-700 hover:text-gray-900 font-medium inline-flex items-center gap-1">
-                  View Project <ExternalLink className="w-4 h-4" />
-                </a>
+                <div className="flex gap-4 mt-4">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 font-medium hover:underline inline-flex items-center gap-1"
+                  >
+                    GitHub <ExternalLink className="w-4 h-4" />
+                  </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-green-600 font-medium hover:underline inline-flex items-center gap-1"
+                    >
+                      Live Demo <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -167,82 +196,72 @@ const Homepage = () => {
           </motion.a>
         </div>
       </section>
+
       {/* Contact Section */}
-<section id="contact" className="py-24 bg-gray-50">
-  <div className="container mx-auto px-6 max-w-5xl">
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeUp}
-    >
-      <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-        Get in Touch
-      </h2>
-      <div className="bg-white rounded-3xl shadow-lg p-10 grid md:grid-cols-2 gap-10 items-center">
-        {/* Contact Info */}
-        <div className="space-y-6 text-gray-700">
-          <div>
-            <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Name</p>
-            <p className="text-lg font-medium">Yirenkyi Jodi</p>
-          </div>
-          <div>
-            <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Phone</p>
-            <p className="text-lg font-medium">+233 59 814 1926</p>
-          </div>
-          <div>
-            <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Email</p>
-            <a
-              href="mailto:yirenkyijodi@gmail.com"
-              className="text-lg font-medium text-blue-600 hover:underline"
-            >
-              jodiyirenkyi@gmail.com
-            </a>
-          </div>
-          <div>
-            <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Location</p>
-            <p className="text-lg font-medium">Accra, Ghana</p>
-          </div>
-        </div>
+      <section id="contact" className="py-24 bg-gray-50">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Get in Touch</h2>
+            <div className="bg-white rounded-3xl shadow-xl p-10 grid md:grid-cols-2 gap-10 items-center">
+              <div className="space-y-6 text-gray-700">
+                <div>
+                  <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Name</p>
+                  <p className="text-lg font-medium">Yirenkyi Jodi</p>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Phone</p>
+                  <p className="text-lg font-medium">+233 59 814 1926</p>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Email</p>
+                  <a href="mailto:jodiyirenkyi@gmail.com" className="text-lg font-medium text-blue-600 hover:underline">
+                    jodiyirenkyi@gmail.com
+                  </a>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Location</p>
+                  <p className="text-lg font-medium">Accra, Ghana</p>
+                </div>
+              </div>
 
-        {/* Socials */}
-        <div className="space-y-4">
-          <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">Find me on</p>
-          <div className="flex gap-5 text-gray-700 text-2xl">
-            <a
-              href="https://github.com/JodiKKY"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-black transition-colors"
-              title="GitHub"
-            >
-              <i className="fab fa-github"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/JODIYIRENKYI"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-700 transition-colors"
-              title="LinkedIn"
-            >
-              <i className="fab fa-linkedin"></i>
-            </a>
-            <a
-              href="https://twitter.com/JodiKKY"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-500 transition-colors"
-              title="Twitter"
-            >
-              <i className="fab fa-twitter"></i>
-            </a>
-          </div>
+              <div className="space-y-4">
+                <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">Find me on</p>
+                <div className="flex gap-5 text-2xl">
+                  <a
+                    href="https://github.com/JodiKKY"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-black"
+                  >
+                    <i className="fab fa-github"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/JODIYIRENKYI"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-blue-700"
+                  >
+                    <i className="fab fa-linkedin"></i>
+                  </a>
+                  <a
+                    href="https://twitter.com/JodiKKY"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-blue-500"
+                  >
+                    <i className="fab fa-twitter"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </motion.div>
-  </div>
-</section>
-
+      </section>
     </main>
   );
 };
