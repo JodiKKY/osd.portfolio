@@ -20,7 +20,7 @@ const Footer = () => {
           </a>
 
           {/* Instagram */}
-          <a href="https://instagram.com/your_instagram" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+          <a href="https://instagram.com/jodi.osd" target="_blank" rel="noopener noreferrer" className="hover:text-white">
             <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
               <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0-2C3.47 0 0 3.47 0 7.75v8.5C0 20.53 3.47 24 7.75 24h8.5C20.53 24 24 20.53 24 16.25v-8.5C24 3.47 20.53 0 16.25 0h-8.5zM12 6.4a5.6 5.6 0 1 1 0 11.2 5.6 5.6 0 0 1 0-11.2zm0-1.4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm6.5-.1a1.4 1.4 0 1 1-2.8 0 1.4 1.4 0 0 1 2.8 0z"/>
             </svg>
