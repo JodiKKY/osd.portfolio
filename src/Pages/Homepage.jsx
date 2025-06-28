@@ -89,24 +89,25 @@ const Homepage = () => {
         </div>
       </section>
 
-        {/* About Section */}
-    <section id="about" className="py-24 bg-white">
-      <div className="container mx-auto px-6 max-w-4xl">
-        <h2 className="text-4xl font-extrabold text-gray-900 mb-8">About Me</h2>
-        <p className="text-lg text-gray-700 leading-relaxed mb-6">
-          Hello! I’m <span className="font-semibold text-blue-600">Jodi Yirenkyi</span>, a passionate and detail-oriented front-end developer with a strong focus on creating engaging, user-centric web applications. My core expertise lies in building responsive and intuitive interfaces using modern technologies like <span className="font-semibold text-gray-900">React</span> and <span className="font-semibold text-gray-900">Tailwind CSS</span>.
-        </p>
-        <p className="text-lg text-gray-700 leading-relaxed mb-6">
-          Beyond the front end, I also work comfortably on the server side using <span className="font-semibold text-gray-900">Node.js</span> and manage relational data with <span className="font-semibold text-gray-900">SQL</span> databases. This full-stack perspective allows me to build more cohesive and efficient solutions, from user interface to data handling.
-        </p>
-        <p className="text-lg text-gray-700 leading-relaxed mb-6">
-          I value the harmony between design and function—writing clean, maintainable code while prioritizing performance, accessibility, and responsiveness. Every project I take on is an opportunity to solve real-world problems with elegant, scalable solutions.
-        </p>
-        <p className="text-lg text-gray-700 leading-relaxed">
-          I’m always learning and keeping up with industry trends to refine my skills and stay ahead of the curve. Whether working independently or as part of a collaborative team, I bring energy, creativity, and a commitment to excellence. Let’s build something remarkable together.
-        </p>
-      </div>
-    </section>
+      {/* About Section */}
+<section id="about" className="py-24 bg-white">
+  <div className="container mx-auto px-6 max-w-4xl">
+    <h2 className="text-4xl font-extrabold text-gray-900 mb-8">About Me</h2>
+    <p className="text-lg text-gray-700 leading-relaxed mb-6">
+      Hello! I’m <span className="font-semibold text-blue-600">Jodi Yirenkyi</span>, a passionate and detail-oriented front-end developer with a strong focus on creating engaging, user-centric web applications. My core expertise lies in building responsive and intuitive interfaces using modern technologies like <span className="font-semibold text-gray-900">React</span> and <span className="font-semibold text-gray-900">Tailwind CSS</span>.
+    </p>
+    <p className="text-lg text-gray-700 leading-relaxed mb-6">
+      Beyond the front end, I also work comfortably on the server side using <span className="font-semibold text-gray-900">Node.js</span> and manage relational data with <span className="font-semibold text-gray-900">SQL</span> databases. I also work with <span className="font-semibold text-gray-900">WordPress</span> to build dynamic, content-driven websites using custom themes and plugins. This full-stack perspective allows me to build cohesive and efficient solutions—from user interface to data handling and content management.
+    </p>
+    <p className="text-lg text-gray-700 leading-relaxed mb-6">
+      I value the harmony between design and function—writing clean, maintainable code while prioritizing performance, accessibility, and responsiveness. Every project I take on is an opportunity to solve real-world problems with elegant, scalable solutions.
+    </p>
+    <p className="text-lg text-gray-700 leading-relaxed">
+      I’m always learning and keeping up with industry trends to refine my skills and stay ahead of the curve. Whether working independently or as part of a collaborative team, I bring energy, creativity, and a commitment to excellence. Let’s build something remarkable together.
+    </p>
+  </div>
+</section>
+
 
 
       {/* Projects Section */}
