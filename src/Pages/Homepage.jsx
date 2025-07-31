@@ -21,7 +21,6 @@ const projects = [
     desc: 'An online store for African wear, featuring product listings, shopping cart, and secure checkout.',
     tech: ['React', 'Stripe API', 'Tailwind CSS'],
     link: 'https://github.com/JodiKKY/ConceptMabelles',
-   
   },
   {
     title: 'EmployNexa - Job Listing Web App',
@@ -30,7 +29,15 @@ const projects = [
     link: 'https://github.com/JodiKKY/employnexa-job-board',
     demo: 'https://employnexa.vercel.app', 
   },
+  {
+    title: 'Jokams Limited Company',
+    desc: 'A corporate website for a chemical import and distribution company based in Accra. It showcases company profile, chemical products, team, and contact details.',
+    tech: ['Tailwind CSS', 'React'],
+    link: 'https://github.com/JodiKKY/Jokams', // update if repo changes
+    demo: 'https://jokamsltd.vercel.app' // update if live URL changes
+  },
 ];
+
 
 
 const fadeUp = {
