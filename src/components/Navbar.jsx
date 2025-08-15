@@ -16,33 +16,34 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(prev => !prev);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/60 backdrop-blur-xl border-b border-neutral-200 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-neutral-900/80 backdrop-blur-md border-b border-neutral-800 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
 
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2 group">
+          <a href="/" className="flex items-center gap-3 group">
             <motion.img
               src={favicon}
               alt="Logo"
-              className="w-10 h-10 object-contain rounded-full shadow-sm"
-              whileHover={{ rotate: 10, scale: 1.1 }}
+              className="w-10 h-10 object-contain rounded-full shadow-lg border border-neutral-700"
+              whileHover={{ rotate: 12, scale: 1.15 }}
               transition={{ type: 'spring', stiffness: 300 }}
             />
-            <span className="text-xl font-bold tracking-tight text-neutral-900 hidden sm:inline group-hover:text-blue-600 transition-colors duration-200">
+            <span className="text-xl font-bold tracking-tight text-white hidden sm:inline group-hover:text-blue-400 transition-colors duration-200">
               OSD
             </span>
           </a>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             {navLinks.map(link => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-neutral-800 hover:text-blue-600 hover:underline underline-offset-4 transition duration-200"
+                className="relative text-sm font-medium text-gray-300 hover:text-blue-400 transition duration-300 group"
               >
                 {link.name}
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>
@@ -50,7 +51,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden text-neutral-900 focus:outline-none"
+            className="md:hidden text-gray-200 focus:outline-none hover:text-blue-400 transition"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -66,15 +67,15 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-white shadow-md border-t border-gray-200 px-4 py-4 space-y-3"
+            transition={{ duration: 0.25 }}
+            className="md:hidden bg-neutral-900 border-t border-neutral-800 px-4 py-4 space-y-4 shadow-lg"
           >
             {navLinks.map(link => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block text-base font-medium text-neutral-800 hover:text-blue-600 transition"
+                className="block text-lg font-medium text-gray-300 hover:text-blue-400 transition"
               >
                 {link.name}
               </a>
