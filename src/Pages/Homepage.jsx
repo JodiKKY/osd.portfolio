@@ -272,7 +272,7 @@ const Homepage = () => {
               <div className="space-y-6 text-gray-300">
                 <div>
                   <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Name</p>
-                  <p className="text-lg font-medium text-white">Yirenkyi Jodi</p>
+                  <p className="text-lg font-medium text-white">Yirenkyi Jodi Kwesi Kwakye</p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Phone</p>
