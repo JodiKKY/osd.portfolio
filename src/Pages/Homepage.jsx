@@ -28,14 +28,14 @@ const projects = [
     desc: 'A modern job board web application that fetches listings from a job listing API and presents them in a clean interface.',
     tech: ['React', 'Tailwind CSS', 'Job Listing API'],
     link: 'https://github.com/JodiKKY/employnexa-job-board',
-    demo: 'https://employnexa.vercel.app', 
+    demo: 'https://employnexa.vercel.app',
   },
   {
     title: 'Jokams Limited Company',
     desc: 'A corporate website for a chemical import and distribution company based in Accra. It showcases company profile, chemical products, team, and contact details.',
     tech: ['Tailwind CSS', 'React'],
     link: 'https://github.com/JodiKKY/Jokams',
-    demo: 'https://jokamsltd.vercel.app'
+    demo: 'https://jokamsltd.vercel.app',
   },
 ];
 
@@ -50,7 +50,7 @@ const fadeUp = {
 
 const Homepage = () => {
   return (
-    <main className="bg-gray-900 text-gray-100 font-sans overflow-x-hidden relative">
+    <main className="bg-black text-white font-sans overflow-x-hidden relative">
 
       {/* Hero Section */}
       <section className="relative py-32 text-center">
@@ -60,16 +60,16 @@ const Homepage = () => {
           variants={fadeUp}
           className="text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight tracking-wide"
         >
-          Hi, I'm <span className="text-blue-400">Yirenkyi Jodi</span>
+          Hi, I'm <span className="text-gray-300">Yirenkyi Jodi</span>
         </motion.h1>
         <motion.p
           initial="hidden"
           animate="visible"
           custom={1}
           variants={fadeUp}
-          className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10"
+          className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10"
         >
-          I craft futuristic, minimal, and ultra-modern web experiences.
+          I craft minimal, futuristic, and ultra-modern web experiences.
         </motion.p>
         <motion.div
           initial="hidden"
@@ -80,38 +80,79 @@ const Homepage = () => {
         >
           <a
             href="#projects"
-            className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-3xl hover:scale-105 hover:shadow-lg transition-transform shadow-blue-500/50 inline-flex items-center gap-2 font-semibold"
+            className="px-8 py-3 bg-white text-black rounded-3xl hover:scale-105 hover:bg-gray-200 transition-transform inline-flex items-center gap-2 font-semibold"
           >
             <FolderKanban className="w-5 h-5" /> View Projects
           </a>
           <a
             href={pdf}
             download
-            className="px-8 py-3 border border-blue-500 text-blue-400 rounded-3xl hover:bg-blue-500 hover:text-white hover:shadow-lg transition-transform shadow-blue-500/50 inline-flex items-center gap-2 font-semibold"
+            className="px-8 py-3 border border-white text-white rounded-3xl hover:bg-white hover:text-black transition-transform inline-flex items-center gap-2 font-semibold"
           >
             <Download className="w-5 h-5" /> Download Resume
           </a>
         </motion.div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-24 bg-gray-900 relative z-10">
-        <div className="container mx-auto px-6 max-w-4xl backdrop-blur-md bg-gray-900/50 p-10 rounded-3xl shadow-lg border border-gray-700">
-          <h2 className="text-4xl font-extrabold text-white mb-8">About Me</h2>
-          <p className="text-lg text-gray-300 leading-relaxed mb-6">
-            Hello! I’m <span className="font-semibold text-blue-400">Jodi Kwesi Kwakye Yirenkyi</span>, a front-end developer building interactive web apps using <span className="font-semibold text-white">React</span> and <span className="font-semibold text-white">Tailwind CSS</span>.
-          </p>
-          <p className="text-lg text-gray-300 leading-relaxed mb-6">
-            I also work on the server side with <span className="font-semibold text-white">Node.js</span> and manage relational data with <span className="font-semibold text-white">SQL</span>. My full-stack skills help me create cohesive, efficient solutions from interface to data management.
-          </p>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            I continuously learn new technologies to stay ahead, delivering sleek and modern digital experiences.
-          </p>
+{/* About Section */}
+<section id="about" className="py-24 bg-black relative z-10">
+  <div className="container mx-auto px-6 max-w-4xl">
+    {/* About Card */}
+    <div className="backdrop-blur-md bg-gradient-to-br from-black/60 to-neutral-900/60 p-10 rounded-3xl shadow-xl border border-gray-700 hover:border-gray-500 transition-all">
+      <h2 className="text-4xl font-extrabold text-white mb-8">About Me</h2>
+      <p className="text-lg text-gray-300 leading-relaxed mb-6">
+        Hello! I’m <span className="font-semibold text-white">Jodi Kwesi Kwakye Yirenkyi</span>, a front-end developer building interactive web apps using <span className="font-semibold text-white">React</span> and <span className="font-semibold text-white">Tailwind CSS</span>.
+      </p>
+      <p className="text-lg text-gray-300 leading-relaxed mb-6">
+        I also work on the server side with <span className="font-semibold text-white">Node.js</span> and manage relational data with <span className="font-semibold text-white">SQL</span>. My full-stack skills help me create cohesive, efficient solutions from interface to data management.
+      </p>
+      <p className="text-lg text-gray-300 leading-relaxed">
+        I continuously learn new technologies to stay ahead, delivering sleek and modern digital experiences.
+      </p>
+    </div>
+
+    {/* Tech Stack */}
+    <div className="mt-12 text-center">
+      <h3 className="text-2xl font-bold text-white mb-6">Tech Stack</h3>
+      <div className="flex flex-wrap justify-center gap-8 text-5xl text-gray-400">
+        {/* React */}
+        <div className="flex flex-col items-center gap-2 hover:text-sky-400 transition group">
+          <i className="devicon-react-original animate-spin-slow group-hover:animate-spin"></i>
+          <span className="text-sm text-gray-400 group-hover:text-white">React</span>
         </div>
-      </section>
+        {/* Tailwind */}
+        <div className="flex flex-col items-center gap-2 hover:text-cyan-400 transition group">
+          <i className="devicon-tailwindcss-plain group-hover:animate-bounce"></i>
+          <span className="text-sm text-gray-400 group-hover:text-white">Tailwind</span>
+        </div>
+        {/* Node.js */}
+        <div className="flex flex-col items-center gap-2 hover:text-green-500 transition group">
+          <i className="devicon-nodejs-plain group-hover:animate-pulse"></i>
+          <span className="text-sm text-gray-400 group-hover:text-white">Node.js</span>
+        </div>
+        {/* JavaScript */}
+        <div className="flex flex-col items-center gap-2 hover:text-yellow-400 transition group">
+          <i className="devicon-javascript-plain group-hover:animate-bounce"></i>
+          <span className="text-sm text-gray-400 group-hover:text-white">JavaScript</span>
+        </div>
+        {/* MySQL */}
+        <div className="flex flex-col items-center gap-2 hover:text-orange-400 transition group">
+          <i className="devicon-mysql-plain group-hover:animate-pulse"></i>
+          <span className="text-sm text-gray-400 group-hover:text-white">MySQL</span>
+        </div>
+        {/* Git */}
+        <div className="flex flex-col items-center gap-2 hover:text-red-500 transition group">
+          <i className="devicon-git-plain group-hover:animate-bounce"></i>
+          <span className="text-sm text-gray-400 group-hover:text-white">Git</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 bg-gray-900 relative z-10">
+      <section id="projects" className="py-24 bg-black relative z-10">
         <div className="container mx-auto px-6 max-w-6xl">
           <motion.h2
             initial="hidden"
@@ -120,7 +161,7 @@ const Homepage = () => {
             variants={fadeUp}
             className="text-5xl font-extrabold text-white mb-12 text-center flex justify-center items-center gap-3"
           >
-            <FolderKanban className="w-8 h-8 text-blue-400" /> Projects
+            <FolderKanban className="w-8 h-8 text-gray-300" /> Projects
           </motion.h2>
 
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
@@ -132,38 +173,48 @@ const Homepage = () => {
                 viewport={{ once: true }}
                 custom={idx}
                 variants={fadeUp}
-                className="bg-gray-800/30 backdrop-blur-md border border-gray-700 rounded-3xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 cursor-pointer overflow-hidden"
+                className="relative group rounded-3xl overflow-hidden shadow-lg cursor-pointer border border-gray-700"
               >
-                <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
-                <p className="text-gray-300 mb-4">{project.desc}</p>
+                {/* Background placeholder */}
+                <div className="w-full h-64 bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center">
+                  <span className="text-gray-600 text-sm">Project Preview</span>
+                </div>
 
-                <ul className="flex flex-wrap gap-2 mb-5 text-sm">
-                  {project.tech.map((tech, i) => (
-                    <li key={i} className="bg-gray-700 text-white px-3 py-1 rounded-full font-medium">
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center text-center px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
+                  <p className="text-gray-300 text-sm mb-4">{project.desc}</p>
 
-                <div className="flex gap-4 mt-4">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-white bg-blue-500 px-4 py-2 rounded-xl shadow-md hover:scale-105 transition-transform font-semibold"
-                  >
-                    GitHub <ExternalLink className="w-4 h-4" />
-                  </a>
-                  {project.demo && (
+                  {/* Tech tags */}
+                  <ul className="flex flex-wrap justify-center gap-2 mb-4">
+                    {project.tech.map((tech, i) => (
+                      <li key={i} className="bg-gray-900 text-white px-3 py-1 rounded-full text-xs font-medium border border-gray-600">
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Links */}
+                  <div className="flex gap-4">
                     <a
-                      href={project.demo}
+                      href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-white bg-green-500 px-4 py-2 rounded-xl shadow-md hover:scale-105 transition-transform font-semibold"
+                      className="flex items-center gap-1 text-black bg-white px-3 py-2 rounded-lg text-sm shadow-md hover:bg-gray-200 transition-transform"
                     >
-                      Live Demo <ExternalLink className="w-4 h-4" />
+                      GitHub <ExternalLink className="w-4 h-4" />
                     </a>
-                  )}
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 text-black bg-white px-3 py-2 rounded-lg text-sm shadow-md hover:bg-gray-200 transition-transform"
+                      >
+                        Live Demo <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -172,8 +223,8 @@ const Homepage = () => {
       </section>
 
       {/* Resume Section */}
-      <section id="resume" className="py-24 bg-gray-900 relative z-10">
-        <div className="container mx-auto px-6 max-w-5xl text-center backdrop-blur-md bg-gray-900/50 p-10 rounded-3xl shadow-lg border border-gray-700">
+      <section id="resume" className="py-24 bg-black relative z-10">
+        <div className="container mx-auto px-6 max-w-5xl text-center backdrop-blur-md bg-black/50 p-10 rounded-3xl shadow-lg border border-gray-700">
           <motion.h2
             initial="hidden"
             whileInView="visible"
@@ -200,7 +251,7 @@ const Homepage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="inline-block px-8 py-3 bg-blue-500 text-white rounded-3xl hover:scale-105 transition-transform shadow-lg font-semibold"
+            className="inline-block px-8 py-3 bg-white text-black rounded-3xl hover:scale-105 transition-transform shadow-lg font-semibold"
           >
             <Download className="w-5 h-5" /> Download Resume (PDF)
           </motion.a>
@@ -208,7 +259,7 @@ const Homepage = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-gray-900 relative z-10">
+      <section id="contact" className="py-24 bg-black relative z-10">
         <div className="container mx-auto px-6 max-w-5xl">
           <motion.div
             initial="hidden"
@@ -217,7 +268,7 @@ const Homepage = () => {
             variants={fadeUp}
           >
             <h2 className="text-4xl font-bold text-white mb-12 text-center">Get in Touch</h2>
-            <div className="bg-gray-800/30 backdrop-blur-md rounded-3xl shadow-xl p-10 grid md:grid-cols-2 gap-10 items-center border border-gray-700">
+            <div className="bg-black/50 backdrop-blur-md rounded-3xl shadow-xl p-10 grid md:grid-cols-2 gap-10 items-center border border-gray-700">
               <div className="space-y-6 text-gray-300">
                 <div>
                   <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Name</p>
@@ -229,7 +280,7 @@ const Homepage = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Email</p>
-                  <a href="mailto:jodiyirenkyi@gmail.com" className="text-lg font-medium text-blue-400 hover:underline">
+                  <a href="mailto:jodiyirenkyi@gmail.com" className="text-lg font-medium text-white hover:underline">
                     jodiyirenkyi@gmail.com
                   </a>
                 </div>
@@ -246,7 +297,7 @@ const Homepage = () => {
                     href="https://github.com/JodiKKY"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-white"
+                    className="text-gray-400 hover:text-white"
                   >
                     <i className="fab fa-github"></i>
                   </a>
@@ -254,7 +305,7 @@ const Homepage = () => {
                     href="https://www.linkedin.com/in/JODIYIRENKYI"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-blue-400"
+                    className="text-gray-400 hover:text-white"
                   >
                     <i className="fab fa-linkedin"></i>
                   </a>
@@ -262,7 +313,7 @@ const Homepage = () => {
                     href="https://twitter.com/JodiKKY"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-blue-500"
+                    className="text-gray-400 hover:text-white"
                   >
                     <i className="fab fa-twitter"></i>
                   </a>

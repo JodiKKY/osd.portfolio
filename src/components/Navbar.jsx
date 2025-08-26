@@ -16,10 +16,9 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(prev => !prev);
 
   return (
-    <nav className="sticky top-0 z-50 bg-neutral-900/80 backdrop-blur-md border-b border-neutral-800 shadow-lg">
+    <nav className="sticky top-0 z-50 bg-neutral-900/80 backdrop-blur-md border-b border-neutral-800 shadow-lg transition-all duration-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 group">
             <motion.img
@@ -29,7 +28,7 @@ const Navbar = () => {
               whileHover={{ rotate: 12, scale: 1.15 }}
               transition={{ type: 'spring', stiffness: 300 }}
             />
-            <span className="text-xl font-bold tracking-tight text-white hidden sm:inline group-hover:text-blue-400 transition-colors duration-200">
+            <span className="text-xl font-bold tracking-tight text-white hidden sm:inline group-hover:text-black transition-colors duration-200">
               OSD
             </span>
           </a>
@@ -40,10 +39,10 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="relative text-sm font-medium text-gray-300 hover:text-blue-400 transition duration-300 group"
+                className="relative text-sm font-medium text-gray-300 hover:text-black transition duration-300 group"
               >
                 {link.name}
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>
@@ -51,7 +50,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden text-gray-200 focus:outline-none hover:text-blue-400 transition"
+            className="md:hidden text-gray-200 focus:outline-none hover:text-black transition"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -68,14 +67,14 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden bg-neutral-900 border-t border-neutral-800 px-4 py-4 space-y-4 shadow-lg"
+            className="md:hidden bg-neutral-900/90 border-t border-neutral-800 px-4 py-4 space-y-4 shadow-lg"
           >
             {navLinks.map(link => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block text-lg font-medium text-gray-300 hover:text-blue-400 transition"
+                className="block text-lg font-medium text-gray-300 hover:text-black transition"
               >
                 {link.name}
               </a>
