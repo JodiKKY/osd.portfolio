@@ -2,11 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Geist Mono from jsDelivr CDN */
+
 @import url('https://cdn.jsdelivr.net/gh/vercel/geist-font/geist-mono.css');
 
-/* Optional: Make it global */
 body {
   font-family: "Geist Mono", monospace;
-  font-weight: 600; /* Default weight */
+  font-weight: 600; 
 }
