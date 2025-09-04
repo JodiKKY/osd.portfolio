@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Download, FolderKanban, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Typewriter } from 'react-simple-typewriter';
 import pdf from '../assets/CV.pdf';
 
 const projects = [
@@ -49,9 +50,10 @@ const fadeUp = {
 };
 
 const Homepage = () => {
-  return (
-    <main className="bg-black text-white font-sans overflow-x-hidden relative">
+  const [showSubtitle, setShowSubtitle] = useState(false);
 
+  return (
+    <main className="bg-black text-white font-geist-mono overflow-x-hidden relative">
       {/* Hero Section */}
       <section className="relative py-32 text-center">
         <motion.h1
@@ -60,17 +62,38 @@ const Homepage = () => {
           variants={fadeUp}
           className="text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight tracking-wide"
         >
-          Hi, I'm <span className="text-gray-300">Yirenkyi Jodi</span>
+          <Typewriter
+            words={["Hi, I'm Yirenkyi Jodi"]}
+            loop={1}
+            cursor
+            cursorStyle=""
+            typeSpeed={80}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            onLoopDone={() => setShowSubtitle(true)}
+          />
         </motion.h1>
-        <motion.p
-          initial="hidden"
-          animate="visible"
-          custom={1}
-          variants={fadeUp}
-          className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10"
-        >
-          I craft minimal, futuristic, and ultra-modern web experiences.
-        </motion.p>
+
+        {true && ( // always show subtitle immediately with a small delay inside Typewriter
+  <motion.p
+    initial="hidden"
+    animate="visible"
+    custom={1}
+    variants={fadeUp}
+    className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10"
+  >
+    <Typewriter
+      words={["I craft minimal, futuristic, and ultra-modern web experiences."]}
+      loop={1}
+      cursor
+      cursorStyle=""
+      typeSpeed={40}
+      deleteSpeed={20}
+      delaySpeed={500}
+    />
+  </motion.p>
+)}
+
         <motion.div
           initial="hidden"
           animate="visible"
@@ -94,62 +117,54 @@ const Homepage = () => {
         </motion.div>
       </section>
 
-{/* About Section */}
-<section id="about" className="py-24 bg-black relative z-10">
-  <div className="container mx-auto px-6 max-w-4xl">
-    {/* About Card */}
-    <div className="backdrop-blur-md bg-gradient-to-br from-black/60 to-neutral-900/60 p-10 rounded-3xl shadow-xl border border-gray-700 hover:border-gray-500 transition-all">
-      <h2 className="text-4xl font-extrabold text-white mb-8">About Me</h2>
-      <p className="text-lg text-gray-300 leading-relaxed mb-6">
-        Hello! I’m <span className="font-semibold text-white">Jodi Kwesi Kwakye Yirenkyi</span>, a front-end developer building interactive web apps using <span className="font-semibold text-white">React</span> and <span className="font-semibold text-white">Tailwind CSS</span>.
-      </p>
-      <p className="text-lg text-gray-300 leading-relaxed mb-6">
-        I also work on the server side with <span className="font-semibold text-white">Node.js</span> and manage relational data with <span className="font-semibold text-white">SQL</span>. My full-stack skills help me create cohesive, efficient solutions from interface to data management.
-      </p>
-      <p className="text-lg text-gray-300 leading-relaxed">
-        I continuously learn new technologies to stay ahead, delivering sleek and modern digital experiences.
-      </p>
-    </div>
+      {/* About Section */}
+      <section id="about" className="py-24 bg-black relative z-10">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div className="backdrop-blur-md bg-gradient-to-br from-black/60 to-neutral-900/60 p-10 rounded-3xl shadow-xl border border-gray-700 hover:border-gray-500 transition-all">
+            <h2 className="text-4xl font-extrabold text-white mb-8">About Me</h2>
+            <p className="text-lg text-gray-300 leading-relaxed mb-6">
+              Hello! I’m <span className="font-semibold text-white">Jodi Kwesi Kwakye Yirenkyi</span>, a front-end developer building interactive web apps using <span className="font-semibold text-white">React</span> and <span className="font-semibold text-white">Tailwind CSS</span>.
+            </p>
+            <p className="text-lg text-gray-300 leading-relaxed mb-6">
+              I also work on the server side with <span className="font-semibold text-white">Node.js</span> and manage relational data with <span className="font-semibold text-white">SQL</span>. My full-stack skills help me create cohesive, efficient solutions from interface to data management.
+            </p>
+            <p className="text-lg text-gray-300 leading-relaxed">
+              I continuously learn new technologies to stay ahead, delivering sleek and modern digital experiences.
+            </p>
+          </div>
 
-    {/* Tech Stack */}
-    <div className="mt-12 text-center">
-      <h3 className="text-2xl font-bold text-white mb-6">Tech Stack</h3>
-      <div className="flex flex-wrap justify-center gap-8 text-5xl text-gray-400">
-        {/* React */}
-        <div className="flex flex-col items-center gap-2 hover:text-sky-400 transition group">
-          <i className="devicon-react-original animate-spin-slow group-hover:animate-spin"></i>
-          <span className="text-sm text-gray-400 group-hover:text-white">React</span>
+          {/* Tech Stack */}
+          <div className="mt-12 text-center">
+            <h3 className="text-2xl font-bold text-white mb-6">Tech Stack</h3>
+            <div className="flex flex-wrap justify-center gap-8 text-5xl text-gray-400">
+              <div className="flex flex-col items-center gap-2 hover:text-sky-400 transition group">
+                <i className="devicon-react-original animate-spin-slow group-hover:animate-spin"></i>
+                <span className="text-sm text-gray-400 group-hover:text-white">React</span>
+              </div>
+              <div className="flex flex-col items-center gap-2 hover:text-cyan-400 transition group">
+                <i className="devicon-tailwindcss-plain group-hover:animate-bounce"></i>
+                <span className="text-sm text-gray-400 group-hover:text-white">Tailwind</span>
+              </div>
+              <div className="flex flex-col items-center gap-2 hover:text-green-500 transition group">
+                <i className="devicon-nodejs-plain group-hover:animate-pulse"></i>
+                <span className="text-sm text-gray-400 group-hover:text-white">Node.js</span>
+              </div>
+              <div className="flex flex-col items-center gap-2 hover:text-yellow-400 transition group">
+                <i className="devicon-javascript-plain group-hover:animate-bounce"></i>
+                <span className="text-sm text-gray-400 group-hover:text-white">JavaScript</span>
+              </div>
+              <div className="flex flex-col items-center gap-2 hover:text-orange-400 transition group">
+                <i className="devicon-mysql-plain group-hover:animate-pulse"></i>
+                <span className="text-sm text-gray-400 group-hover:text-white">MySQL</span>
+              </div>
+              <div className="flex flex-col items-center gap-2 hover:text-red-500 transition group">
+                <i className="devicon-git-plain group-hover:animate-bounce"></i>
+                <span className="text-sm text-gray-400 group-hover:text-white">Git</span>
+              </div>
+            </div>
+          </div>
         </div>
-        {/* Tailwind */}
-        <div className="flex flex-col items-center gap-2 hover:text-cyan-400 transition group">
-          <i className="devicon-tailwindcss-plain group-hover:animate-bounce"></i>
-          <span className="text-sm text-gray-400 group-hover:text-white">Tailwind</span>
-        </div>
-        {/* Node.js */}
-        <div className="flex flex-col items-center gap-2 hover:text-green-500 transition group">
-          <i className="devicon-nodejs-plain group-hover:animate-pulse"></i>
-          <span className="text-sm text-gray-400 group-hover:text-white">Node.js</span>
-        </div>
-        {/* JavaScript */}
-        <div className="flex flex-col items-center gap-2 hover:text-yellow-400 transition group">
-          <i className="devicon-javascript-plain group-hover:animate-bounce"></i>
-          <span className="text-sm text-gray-400 group-hover:text-white">JavaScript</span>
-        </div>
-        {/* MySQL */}
-        <div className="flex flex-col items-center gap-2 hover:text-orange-400 transition group">
-          <i className="devicon-mysql-plain group-hover:animate-pulse"></i>
-          <span className="text-sm text-gray-400 group-hover:text-white">MySQL</span>
-        </div>
-        {/* Git */}
-        <div className="flex flex-col items-center gap-2 hover:text-red-500 transition group">
-          <i className="devicon-git-plain group-hover:animate-bounce"></i>
-          <span className="text-sm text-gray-400 group-hover:text-white">Git</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* Projects Section */}
       <section id="projects" className="py-24 bg-black relative z-10">
@@ -175,17 +190,14 @@ const Homepage = () => {
                 variants={fadeUp}
                 className="relative group rounded-3xl overflow-hidden shadow-lg cursor-pointer border border-gray-700"
               >
-                {/* Background placeholder */}
                 <div className="w-full h-64 bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center">
                   <span className="text-gray-600 text-sm">Project Preview</span>
                 </div>
 
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center text-center px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
                   <p className="text-gray-300 text-sm mb-4">{project.desc}</p>
 
-                  {/* Tech tags */}
                   <ul className="flex flex-wrap justify-center gap-2 mb-4">
                     {project.tech.map((tech, i) => (
                       <li key={i} className="bg-gray-900 text-white px-3 py-1 rounded-full text-xs font-medium border border-gray-600">
@@ -194,7 +206,6 @@ const Homepage = () => {
                     ))}
                   </ul>
 
-                  {/* Links */}
                   <div className="flex gap-4">
                     <a
                       href={project.link}
@@ -323,7 +334,6 @@ const Homepage = () => {
           </motion.div>
         </div>
       </section>
-
     </main>
   );
 };
