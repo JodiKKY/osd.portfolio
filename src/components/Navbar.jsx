@@ -16,7 +16,15 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(prev => !prev);
 
   return (
-    <nav className="sticky top-0 z-50 bg-neutral-900/80 backdrop-blur-md border-b border-neutral-800 shadow-lg transition-all duration-500">
+<nav
+  className="fixed top-4 inset-x-4 h-14 sm:h-16
+  bg-gray-700/30 dark:bg-gray-800/40
+  backdrop-blur-2xl
+  border border-gray-400/30 dark:border-gray-600/30
+  max-w-7xl mx-auto rounded-full z-50
+  shadow-lg shadow-black/20"
+>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
