@@ -379,27 +379,27 @@ const Homepage = () => {
             <div className="bg-black/50 backdrop-blur-md rounded-3xl shadow-xl p-10 grid md:grid-cols-2 gap-10 items-center border border-gray-700">
               <div className="space-y-6 text-gray-300">
                 <div>
-                  <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Name</p>
+                  <p className="text-sm text-black uppercase tracking-wider mb-1">Name</p>
                   <p className="text-lg font-medium text-white">Yirenkyi Jodi Kwesi Kwakye</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Phone</p>
+                  <p className="text-sm text-black uppercase tracking-wider mb-1">Phone</p>
                   <p className="text-lg font-medium text-white">+233 59 814 1926</p>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Email</p>
+                  <p className="text-sm text-black uppercase tracking-wider mb-1">Email</p>
                   <a href="mailto:jodiyirenkyi@gmail.com" className="text-lg font-medium text-white hover:underline">
                     jodiyirenkyi@gmail.com
                   </a>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Location</p>
+                  <p className="text-sm text-black uppercase tracking-wider mb-1">Location</p>
                   <p className="text-lg font-medium text-white">Accra, Ghana</p>
                 </div>
               </div>
 
               <div className="space-y-4">
-                <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">Find me on</p>
+                <p className="text-sm text-black uppercase tracking-wider mb-2">Find me on</p>
                 <div className="flex gap-5 text-2xl">
                   <a
                     href="https://github.com/JodiKKY"
