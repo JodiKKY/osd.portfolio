@@ -17,13 +17,22 @@ const Navbar = () => {
 
   return (
 <nav
-  className="fixed top-4 inset-x-4 h-14 sm:h-16
-  bg-gray-700/30 dark:bg-gray-800/40
-  backdrop-blur-2xl
-  border border-gray-400/30 dark:border-gray-600/30
-  max-w-7xl mx-auto rounded-full z-50
-  shadow-lg shadow-black/20"
+  className="
+    fixed top-6 inset-x-4 h-14 sm:h-16
+    max-w-6xl mx-auto rounded-2xl
+    px-6 z-50
+
+    bg-white/10 dark:bg-white/5
+    backdrop-blur-xl
+    backdrop-saturate-150
+
+    border border-white/20
+    shadow-[0_8px_32px_0_rgba(0,0,0,0.25)]
+
+    transition-all duration-300
+  "
 >
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -36,7 +45,7 @@ const Navbar = () => {
               whileHover={{ rotate: 12, scale: 1.15 }}
               transition={{ type: 'spring', stiffness: 300 }}
             />
-            <span className="text-xl font-bold tracking-tight text-white hidden sm:inline group-hover:text-black transition-colors duration-200">
+            <span className="text-xl font-bold tracking-tight text-black hidden sm:inline group-hover:text-[#ff7800] transition-colors duration-200">
               OSD
             </span>
           </a>
@@ -47,10 +56,10 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="relative text-sm font-medium text-gray-300 hover:text-black transition duration-300 group"
+                className="relative text-sm font-medium text-black hover:text-[#ff7800] transition duration-300 group"
               >
                 {link.name}
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#ff7800] transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </div>
