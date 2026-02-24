@@ -9,25 +9,34 @@ import image2 from "../assets/13.png";
 import image3 from "../assets/14.png";
 import image4 from "../assets/15.png";
 
+import pro1 from "../assets/project1.png";
+import pro2 from "../assets/project2.png";
+import pro3 from "../assets/project3.png";
+import pro4 from "../assets/project4.png";
+
 const projects = [
   {
-    title: "LockiT - NFC Room Access System",
-    desc: "A mobile and web app system for hotels to allow guests access to rooms via NFC-enabled phones.",
-    tech: ["React", "Tailwind CSS", "Firebase"],
-    link: "https://github.com/JodiKKY/lockit-room-access-system",
-    demo: "https://lockit-admin.vercel.app",
+    title: "MergeSeed - Microfinance Company Website",
+    desc: "A corporate website for a microfinance company based in Ghana. It showcases company profile, services, team, and contact details.",
+    tech: ["Tailwind CSS", "React"],
+    link: "https://github.com/JodiKKY/MergeSeed",
+    demo: "https://mergeseed.com",
+    image: pro1,
+  },
+  {
+    title: "Jokams Limited Company",
+    desc: "A corporate website for a chemical import and distribution company based in Accra. It showcases company profile, chemical products, team, and contact details.",
+    tech: ["Tailwind CSS", "React"],
+    link: "https://github.com/JodiKKY/Jokams",
+    demo: "https://jokamsltd.com",
+    image: pro2,
   },
   {
     title: "BiteWise - Restaurant Review Website",
     desc: "A platform where users can discover, review, and rate restaurants in their area.",
     tech: ["React", "Node.js", "MySQL"],
     link: "https://github.com/JodiKKY/BiteWise",
-  },
-  {
-    title: "ConceptMabelles - E-commerce Website",
-    desc: "An online store for African wear, featuring product listings, shopping cart, and secure checkout.",
-    tech: ["React", "Stripe API", "Tailwind CSS"],
-    link: "https://github.com/JodiKKY/ConceptMabelles",
+    image: pro3,
   },
   {
     title: "EmployNexa - Job Listing Web App",
@@ -35,13 +44,7 @@ const projects = [
     tech: ["React", "Tailwind CSS", "Job Listing API"],
     link: "https://github.com/JodiKKY/employnexa-job-board",
     demo: "https://employnexa.vercel.app",
-  },
-  {
-    title: "Jokams Limited Company",
-    desc: "A corporate website for a chemical import and distribution company based in Accra. It showcases company profile, chemical products, team, and contact details.",
-    tech: ["Tailwind CSS", "React"],
-    link: "https://github.com/JodiKKY/Jokams",
-    demo: "https://jokamsltd.vercel.app",
+    image: pro4,
   },
 ];
 
@@ -64,7 +67,6 @@ const deepOrangeFilter =
 
 const BackgroundImages = () => {
   const images = [
-    // Hero/top
     { src: image1, x: "8%", y: "10%", size: "200px", rotate: "-12deg", opacity: 0.22 },
     { src: image2, x: "92%", y: "12%", size: "220px", rotate: "14deg", opacity: 0.2 },
     { src: image3, x: "60%", y: "20%", size: "180px", rotate: "-6deg", opacity: 0.17 },
@@ -72,14 +74,12 @@ const BackgroundImages = () => {
     { src: image2, x: "75%", y: "30%", size: "150px", rotate: "-10deg", opacity: 0.13 },
     { src: image1, x: "22%", y: "34%", size: "150px", rotate: "8deg", opacity: 0.13 },
 
-    // About mid
     { src: image3, x: "10%", y: "44%", size: "200px", rotate: "10deg", opacity: 0.16 },
     { src: image1, x: "90%", y: "46%", size: "200px", rotate: "-10deg", opacity: 0.15 },
     { src: image4, x: "50%", y: "48%", size: "150px", rotate: "6deg", opacity: 0.12 },
     { src: image2, x: "28%", y: "54%", size: "150px", rotate: "-6deg", opacity: 0.12 },
     { src: image1, x: "72%", y: "56%", size: "140px", rotate: "10deg", opacity: 0.11 },
 
-    // Projects area
     { src: image3, x: "15%", y: "62%", size: "220px", rotate: "-14deg", opacity: 0.14 },
     { src: image2, x: "85%", y: "64%", size: "210px", rotate: "12deg", opacity: 0.14 },
     { src: image1, x: "55%", y: "66%", size: "170px", rotate: "-4deg", opacity: 0.12 },
@@ -87,7 +87,6 @@ const BackgroundImages = () => {
     { src: image2, x: "70%", y: "76%", size: "150px", rotate: "-10deg", opacity: 0.1 },
     { src: image3, x: "25%", y: "78%", size: "150px", rotate: "8deg", opacity: 0.1 },
 
-    // Bottom
     { src: image2, x: "6%", y: "86%", size: "220px", rotate: "-8deg", opacity: 0.12 },
     { src: image3, x: "92%", y: "88%", size: "210px", rotate: "10deg", opacity: 0.12 },
     { src: image1, x: "55%", y: "92%", size: "190px", rotate: "6deg", opacity: 0.1 },
@@ -96,7 +95,6 @@ const BackgroundImages = () => {
 
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      {/* keep your OLD blobs style (no grid, no fixed) */}
       <div className="absolute -top-28 -left-28 h-96 w-96 rounded-full bg-[#ff7800]/14 blur-3xl" />
       <div className="absolute top-44 -right-28 h-[28rem] w-[28rem] rounded-full bg-[#ff7800]/12 blur-3xl" />
       <div className="absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-[#ff7800]/10 blur-3xl" />
@@ -127,7 +125,6 @@ const BackgroundImages = () => {
         />
       ))}
 
-      {/* lighter wash so orange shows more, still clean */}
       <div className="absolute inset-0 bg-white/20" />
     </div>
   );
@@ -138,7 +135,6 @@ const Homepage = () => {
 
   return (
     <main className="bg-white text-black font-geist-mono overflow-x-hidden relative">
-      {/* ✅ old style background layer */}
       <BackgroundImages />
 
       {/* Hero Section */}
@@ -282,8 +278,15 @@ const Homepage = () => {
                 variants={fadeUp}
                 className="group relative rounded-3xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-xl transition-shadow"
               >
-                <div className="relative w-full h-56 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
-                  <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(500px_circle_at_50%_40%,rgba(0,0,0,0.08),transparent_60%)]" />
+                {/* ✅ PROJECT IMAGE */}
+                <div className="relative w-full h-56 overflow-hidden bg-gray-100">
+                  <img
+                    src={project.image}
+                    alt={`${project.title} preview`}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+                    loading="lazy"
+                  />
+                  <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(500px_circle_at_50%_40%,rgba(0,0,0,0.12),transparent_60%)]" />
                 </div>
 
                 <div className="p-7">
@@ -401,12 +404,7 @@ const Homepage = () => {
               <div className="space-y-4">
                 <p className="text-sm text-black uppercase tracking-wider mb-2">Find me on</p>
                 <div className="flex gap-5 text-2xl">
-                  <a
-                    href="https://github.com/JodiKKY"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#ff7800]"
-                  >
+                  <a href="https://github.com/JodiKKY" target="_blank" rel="noopener noreferrer" className="text-[#ff7800]">
                     <i className="fab fa-github"></i>
                   </a>
                   <a
@@ -417,12 +415,7 @@ const Homepage = () => {
                   >
                     <i className="fab fa-linkedin"></i>
                   </a>
-                  <a
-                    href="https://twitter.com/JodiKKY"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#ff7800]"
-                  >
+                  <a href="https://twitter.com/JodiKKY" target="_blank" rel="noopener noreferrer" className="text-[#ff7800]">
                     <i className="fab fa-twitter"></i>
                   </a>
                 </div>
