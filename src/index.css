@@ -2,10 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://cdn.jsdelivr.net/gh/vercel/geist-font/geist-mono.css");
 
-@import url('https://cdn.jsdelivr.net/gh/vercel/geist-font/geist-mono.css');
+/* Global defaults */
+:root {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 body {
-  font-family: "Geist Mono", monospace;
-  font-weight: 600; 
+  margin: 0;
 }
