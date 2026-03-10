@@ -2,17 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://cdn.jsdelivr.net/gh/vercel/geist-font/geist-mono.css");
-
-/* Global defaults */
-:root {
-  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 body {
   margin: 0;
+}
+  @font-face {
+  font-family: "ChakraPetch";
+  src: url("./assets/fonts/ChakraPetch-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "ChakraPetch";
+  src: url("./assets/fonts/ChakraPetch-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "ChakraPetch";
+  src: url("./assets/fonts/ChakraPetch-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "ChakraPetch";
+  src: url("./assets/fonts/ChakraPetch-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "ChakraPetch";
+  src: url("./assets/fonts/ChakraPetch-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "ChakraPetch";
+  src: url("./assets/fonts/ChakraPetch-Italic.ttf") format("truetype");
+  font-style: italic;
 }

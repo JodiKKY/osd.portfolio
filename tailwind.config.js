@@ -4,12 +4,12 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    extend: {
-      fontFamily: {
-        geistmono: ['"Geist Mono"', 'monospace'],
-      },
+theme: {
+  extend: {
+    fontFamily: {
+      chakra: ["ChakraPetch", "sans-serif"],
     },
   },
+},
   plugins: [],
 }
