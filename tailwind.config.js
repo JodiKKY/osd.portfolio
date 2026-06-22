@@ -4,12 +4,12 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-theme: {
-  extend: {
-    fontFamily: {
-      chakra: ["ChakraPetch", "sans-serif"],
+  theme: {
+    extend: {
+      fontFamily: {
+        chakra: ["Chakra Petch", "sans-serif"],
+      },
     },
   },
-},
   plugins: [],
-}
+};
